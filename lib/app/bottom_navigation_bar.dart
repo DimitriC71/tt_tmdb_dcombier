@@ -40,7 +40,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
       },
       children: const <Widget>[
         MovieListPage(),
-        FavoriteListPage(),
+        FavoriteListPage(title: '',),
       ],
     );
   }
