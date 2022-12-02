@@ -66,9 +66,16 @@ class _MovieListPageState extends State<MovieListPage> {
                                                         fontWeight:
                                                             FontWeight.bold)),
                                                 IconButton(
-                                                    onPressed: () {},
-                                                    icon: Icon(
-                                                        Icons.favorite_border))
+                                                    onPressed: () {
+                                                      MovieManager().favoriteCliked(movie);
+                                                      setState(() {});
+                                                    },
+                                                    icon: MovieManager()
+                                                            .isFavorite(movie)
+                                                        ? const Icon(
+                                                            Icons.favorite)
+                                                        : const Icon(Icons
+                                                            .favorite_border))
                                               ],
                                             ),
                                             Text(movie.release_date.toString(),
