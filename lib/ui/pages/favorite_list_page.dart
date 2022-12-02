@@ -20,7 +20,7 @@ class _FavoriteListPageState extends State<FavoriteListPage> {
       body: FutureBuilder(
         future: MovieManager().loadMovie(),
         builder: (context, snapshot) {
-          List<Movie>? movies = MovieManager().getMovie();
+          List<Movie>? movies = MovieManager().getFavoriteMovies();
 
           if (snapshot.hasData) {
             return Center(

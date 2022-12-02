@@ -28,11 +28,28 @@ class MovieManager {
   }
 
   void favoriteCliked(Movie pMovie) {
-    if(movies != null && favoriteMovies!.contains(pMovie)) {
+
+    if(movies != null && favoriteMovies.contains(pMovie)) {
       favoriteMovies.remove(pMovie);
     } else {
       favoriteMovies.add(pMovie);
     }
+
+    //Test pour résoudre bug de l'ajout de favori
+    /*
+    bool find = false;
+    for(var favoriteMovie in favoriteMovies) {
+      if (favoriteMovie.title == pMovie.title) {
+        find = true;
+      }
+    }
+
+    if(find) {
+      favoriteMovies.remove(pMovie);
+    } else {
+      favoriteMovies.add(pMovie);
+    }
+    */
   }
 
   bool isFavorite(Movie pMovie) {
